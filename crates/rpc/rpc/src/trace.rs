@@ -560,6 +560,7 @@ where
 impl<Eth> TraceApiServer for TraceApi<Eth>
 where
     Eth: TraceExt + 'static,
+    <<Eth as FullNodeTypes>::Types as NodeTypes>::ChainSpec: EthereumHardforks,
 {
     /// Executes the given call and returns a number of possible traces for it.
     ///
